@@ -1,0 +1,21 @@
+.character-tile {
+    padding: 10px;
+
+    .container {
+        padding: 10px;
+        display: flex;
+        background: rgb(49, 49, 49);
+        border-radius: 80;
+    }
+
+    .info {
+        margin-left: 10px;
+        color: white;
+    }
+
+    img {
+        $size: 120px;
+        width: $size;
+        width: $size;
+    }
+}
