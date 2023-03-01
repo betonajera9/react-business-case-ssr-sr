@@ -1,6 +1,14 @@
-@import "CharacterTile.scss";
-@import "EpisodeTile.scss";
+@import 'CharacterTile.scss';
+@import 'EpisodeTile.scss';
+@import 'wallpaper.scss';
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap';
+
+$roboto: 'Roboto';
 
 body {
-    background: rgb(39, 43, 51) !important;
+	font-family: $roboto;
+	background: rgb(39, 43, 51) !important;
 }
