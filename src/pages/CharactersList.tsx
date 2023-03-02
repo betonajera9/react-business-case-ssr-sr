@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import Container from 'react-bootstrap/Container'
 import Pagination from 'react-bootstrap/Pagination'
-import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 
 import { CharacterTile } from '../components/CharacterTile'
@@ -21,9 +20,7 @@ export function CharactersList() {
 	})
 
 	const nextPage = async () => {
-		console.log(pagination.page)
 		setPagination({ page: pagination.page + 1 })
-		console.log(pagination.page)
 
 		try {
 			await refetch()
@@ -32,17 +29,45 @@ export function CharactersList() {
 		}
 	}
 
+	let items = []
+
+	for (let number = 1; number <= 5; number++) {
+		items.push(
+			<Pagination.Item key={number} active={number === pagination.page}>
+				{number}
+			</Pagination.Item>
+		)
+	}
+
 	return (
 		<div className='CharactersList'>
-			<Header page='CharactersList' />
+			<Header page='Characters' />
 			<Container>
-				<Button onClick={nextPage}>Navigate to episodes</Button>
-
 				{loading && <p className='text-info'>...loading</p>}
+				{error && <p className='text-danger'>{error.toString()}</p>}
 				<Row>
 					{charactersPage?.results.map((character) => CharacterTile(character))}
 				</Row>
-				<Button onClick={nextPage}>Next page</Button>
+				<div className='pag'>
+					<Pagination>
+						<Pagination.Prev
+							onClick={() => {
+								if (pagination.page > 1) {
+									setPagination({ page: pagination.page - 1 })
+								}
+							}}
+						/>
+						{items}
+						<Pagination.Next
+							onClick={() => {
+								if (charactersPage?.info.pages)
+									if (pagination.page < charactersPage?.info.pages) {
+										setPagination({ page: pagination.page + 1 })
+									}
+							}}
+						/>
+					</Pagination>
+				</div>
 			</Container>
 		</div>
 	)

@@ -1,0 +1,29 @@
+.episode-tile {
+	padding: 10px;
+
+	.container {
+		padding: 10px;
+		display: flex;
+		background: rgb(67, 67, 67);
+		border-radius: 30px;
+	}
+
+	.info {
+		width: 100%;
+		margin-left: 10px;
+		color: white;
+		display: flex;
+		flex-direction: column;
+
+		button {
+			margin: 10px 0px;
+			width: 100%;
+		}
+	}
+
+	img {
+		$size: 120px;
+		width: $size;
+		width: $size;
+	}
+}

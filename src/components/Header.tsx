@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export function Header(props: HeaderProps) {
 	return (
-		<div>
+		<div className='header'>
 			<div className='image'>
 				<img className='wallpaper' src={wallpaper} alt='rick & morty' />
 			</div>

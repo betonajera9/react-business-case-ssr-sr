@@ -1,10 +1,21 @@
-.wallpaper {
-	width: 100%;
-}
+.header {
+	.image {
+		.wallpaper {
+			width: 100%;
+		}
+	}
 
-.title {
-	background-color: white;
-	padding: 5px 50px;
-	display: flex;
-	align-items: baseline;
+	.title {
+		background-color: white;
+		padding: 5px 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.buttons {
+		a {
+			margin: 0px 10px;
+		}
+	}
 }

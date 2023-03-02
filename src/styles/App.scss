@@ -1,6 +1,7 @@
 @import 'CharacterTile.scss';
 @import 'EpisodeTile.scss';
-@import 'wallpaper.scss';
+@import 'Wallpaper.scss';
+@import 'EpisodeDetail.scss';
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,4 +12,9 @@ $roboto: 'Roboto';
 body {
 	font-family: $roboto;
 	background: rgb(39, 43, 51) !important;
+}
+
+.pag {
+	display: flex;
+	justify-content: center;
 }
